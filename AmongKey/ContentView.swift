@@ -31,7 +31,11 @@ struct ContentView: View {
                .background(Color.black)
         
                Button("Update available"){
-                  openURL(URL(string: self.state.download)!)
+                  guard let url = URL(string: self.state.download) else {
+                          print("Error: Invalid download URL")
+                          return
+                      }
+                  openURL(url)
                }
                   .isHidden(self.state.download == "", remove: true)
                   .padding(.bottom, 25)

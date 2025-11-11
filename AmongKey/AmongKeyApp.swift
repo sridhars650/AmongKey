@@ -151,7 +151,7 @@ func amongusWindow() {
             let ownerProcessID = windowDic["kCGWindowOwnerPID"] as! Int
             let bounds = windowDic["kCGWindowBounds"] as! [String: Double]
             
-            if (bounds["Height"]! <= 500 || bounds["Width"]! <= 500) { return } //Fix for Macs with Touchbar
+            if (bounds["Height"]! <= 500 || bounds["Width"]! <= 500) { continue } //Fix for Macs with Touchbar
         
             originalPosition = (x: bounds["X"]!, y: bounds["Y"]!)
             originalSize = (height: bounds["Height"]!, width: bounds["Width"]!)
